@@ -17,16 +17,18 @@ PipeWire.PipeWireSourceItem {
     anchors.centerIn: parent
 
     // Maintain aspect ratio with smarter dimension calculation
-    width: parent.width
-    height: {
-        // If we have valid source dimensions, calculate proper height
-        if (sourceSize.width > 0 && sourceSize.height > 0) {
-            return Math.min(parent.height, parent.width * (sourceSize.height / sourceSize.width));
-        } else {
-            // Fallback to a reasonable default
-            return Math.min(parent.height, parent.width * 0.75);  // 4:3 aspect ratio as fallback
-        }
-    }
+    //width: parent.width
+    //height: {
+    //    // If we have valid source dimensions, calculate proper height
+    //    if (sourceSize.width > 0 && sourceSize.height > 0) {
+    //        return Math.min(parent.height, parent.width * (sourceSize.height / sourceSize.width));
+    //    } else {
+    //        // Fallback to a reasonable default
+    //        return Math.min(parent.height, parent.width * 0.75);  // 4:3 aspect ratio as fallback
+    //    }
+    //}
+    anchors.fill: parent
+
 
     nodeId: waylandItem.nodeId
 

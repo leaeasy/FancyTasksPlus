@@ -24,7 +24,7 @@ MouseArea {
         case Qt.LeftButton:
             tasksModel.requestActivate(modelIndex);
             rootTask.hideImmediately();
-            backend.cancelHighlightWindows();
+            tasks.cancelHighlightWindows();
             break;
         case Qt.MiddleButton:
             backend.cancelHighlightWindows();
@@ -37,6 +37,6 @@ MouseArea {
     }
 
     onContainsMouseChanged: {
-        tasks.windowsHovered([winId], containsMouse);
+        tasks.windowsHovered([String(winId)], containsMouse);
     }
 }
